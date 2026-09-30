@@ -1,0 +1,14 @@
+{
+  "skill": "apk-github",
+  "test_cases": [
+    {"input": "Crée une APK GitHub pour rush-studio", "should_trigger": true},
+    {"input": "Relance assembleRelease et publie la Release", "should_trigger": true},
+    {"input": "Mets à jour l'APK ViralVoice via Actions", "should_trigger": true},
+    {"input": "Le workflow android-apk.yml est rouge", "should_trigger": true},
+    {"input": "Compile l'application Android et donne le lien de téléchargement", "should_trigger": true},
+    {"input": "Déploie la PWA sur GitHub Pages", "should_trigger": false},
+    {"input": "Écris les paroles du prochain morceau", "should_trigger": false},
+    {"input": "Génère une image thumbnail YouTube", "should_trigger": false},
+    {"input": "Résume les résultats EuroMillions", "should_trigger": false}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "skill": "apk-github",
+  "test_cases": [
+    {
+      "name": "rebuild_existing_repo",
+      "input": "Relance l'APK de rush-studio et donne-moi le lien",
+      "assertions": [
+        "Uses Chasmet/rush-studio without creating a new workflow if android-apk.yml exists",
+        "Triggers GitHub Actions instead of compiling APK in the chat sandbox",
+        "Does not claim the APK is ready until the workflow run succeeded",
+        "Returns the artifact or Release URL"
+      ]
+    },
+    {
+      "name": "new_android_project_needs_workflow",
+      "input": "Crée une APK pour ce nouveau projet Android sans CI",
+      "assertions": [
+        "Audits the repo tree for gradle files first",
+        "Adds a workflow based on assets/android-apk.yml with workflow_dispatch",
+        "Builds assembleDebug if signing secrets are missing",
+        "Does not invent a signed release"
+      ]
+    },
+    {
+      "name": "failed_actions_run",
+      "input": "La build APK de Montage-vid-o- est rouge, corrige",
+      "assertions": [
+        "Reads failed job logs before rewriting the project",
+        "Applies the minimum fix from troubleshooting.md",
+        "Does not rotate or replace the existing signing certificate"
+      ]
+    },
+    {
+      "name": "pwa_is_not_gradle",
+      "input": "Fais une APK de glb-viewer-apk",
+      "assertions": [
+        "Detects PWA/HTML project",
+        "Does not pretend assembleRelease exists",
+        "Explains PWABuilder or WebView wrapper as the real path"
+      ]
+    }
+  ]
+}
